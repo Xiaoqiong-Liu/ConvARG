@@ -33,7 +33,7 @@ python train.py
 
 ```
 
-* Reference
+## Reference
 ```
 [1] Li, Yu et al. “HMD-ARG: hierarchical multi-task deep learning for annotating antibiotic resistance genes.” Microbiome 9 (2021): n. pag.
 
