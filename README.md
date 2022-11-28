@@ -19,13 +19,15 @@ conda install numpy
 conda install pandas
 ```
 
-* Validation
+## Test
+* To reproduce the reported test accuracy(0.97+), you could train a new model or simply use the pretrained model under ./repoistory.
 ```
 python test.py
 
 ```
 
-* Train
+## Train
+* Run below command to train
 ```
 python train.py
 
