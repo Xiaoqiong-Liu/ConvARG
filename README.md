@@ -1,5 +1,5 @@
 ## Welcome
-### For my best knowledge, this repository is the first open code for ARG(anti resistance gene) detection, it is inspired by HMD-ARG. And this revised version has higher validation accuracy than HMD-ARG.
+### For the best of my knowledge, this repository is the first pytorch code for ARG(anti resistance gene) detection, it is inspired by HMD-ARG. And this revised version has higher validation accuracy than HMD-ARG.
 
 ## Envrionement
 * Python == 3.8
