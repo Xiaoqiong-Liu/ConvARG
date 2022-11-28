@@ -104,7 +104,7 @@ for epoch in range(Epoch):
         avg_vloss = running_vloss / (i + 1)
         avg_vacc = running_vacc / ((i+1)*batch_size)
         print('LOSS train {} valid {}'.format(mean_loss, avg_vloss))
-        torch.save(net.state_dict(), './repository/net{}-vloss{:.3f}-tloss{:.3f}-vacc{:.3f}-49664.pth'.format(epoch, avg_vloss, mean_loss, avg_vacc))
+        torch.save(net.state_dict(), './repository/net{}-vloss{:.3f}-tloss{:.3f}-vacc{:.3f}-24448.pth'.format(epoch, avg_vloss, mean_loss, avg_vacc))
 
 
 
