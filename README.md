@@ -1,7 +1,7 @@
 ## Welcome
 ### For the best of my knowledge, this repository is the first pytorch code for ARG(anti resistance gene) detection, it is inspired by HMD-ARG. And this revised version has higher validation accuracy than HMD-ARG.
 
-## Envrionement
+## Environment
 * Python == 3.8
 * Download the repository
 ```
