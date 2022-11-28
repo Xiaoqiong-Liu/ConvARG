@@ -38,7 +38,7 @@ cudnn.benchmark = True
 Epoch = 300
 leaing_rate = 1e-4
 batch_size = 64
-module_dir = './repository/net170-vloss0.344-tloss0.327-vacc0.968-49664.pth'
+module_dir = './repository/net90-vloss0.338-tloss0.325-vacc0.973-24448.pth'
 
 # model
 net = ConvARG(23).cuda()
