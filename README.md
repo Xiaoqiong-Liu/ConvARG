@@ -1,5 +1,5 @@
 ## Welcome
-### For the best of my knowledge, this repository is the first pytorch code for ARG(anti resistance gene) detection, it is inspired by HMD-ARG. And this revised version has higher validation accuracy than HMD-ARG.
+### For the best of my knowledge, this repository is the first pytorch implementation for ARG(antibiotic resistance genes) detection, it is based and inspired by HMD-ARG. And this revised version has higher accuracy than HMD-ARG or Deep-ARG reported in [1].
 
 ## Environment
 * Python == 3.8
@@ -28,5 +28,11 @@ python test.py
 * Train
 ```
 python train.py
+
+```
+
+* Reference
+```
+[1] Li, Yu et al. “HMD-ARG: hierarchical multi-task deep learning for annotating antibiotic resistance genes.” Microbiome 9 (2021): n. pag.
 
 ```
