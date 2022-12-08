@@ -36,6 +36,7 @@ python train.py
 ## Result
 | Method   | Accuracy | Precision | Recall | F1-Score |
 |----------|----------|-----------|--------|----------|
+| ---      | ---      | ---       | ---    | ---      |
 | ConvARG (Ours) |0.972     |1.0        |0.98    |0.99      |
 |HMD-ARG | 0.935     | 0.950      | 0.848   | 0.893    |
 | DeepARG | 0.887   | 0.914      | 0.757   | 0.814     |
