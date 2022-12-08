@@ -87,6 +87,9 @@ for epoch in range(Epoch):
     if epoch % 10 == 0:
         running_vloss = 0.0
         running_vacc = 0.0
+        running_tp = 0.0
+        running_pos_pred = 0.0
+        running_l =0.0
         net.train(False)
         for i, vdata in enumerate(val_dataloader):
             vinputs, vlabels = vdata
@@ -100,11 +103,17 @@ for epoch in range(Epoch):
             pred[pred>=0.5] = 1
             pred[pred<0.5] = 0
             val_acc = torch.sum(pred == vlabels)
+            tp, pos_pred,pos_label = prec_recall(pred,vlabels)
             running_vacc += val_acc
+            running_tp += tp
+            running_l += pos_label
         avg_vloss = running_vloss / (i + 1)
         avg_vacc = running_vacc / ((i+1)*batch_size)
-        print('LOSS train {} valid {}'.format(mean_loss, avg_vloss))
-        torch.save(net.state_dict(), './repository/net{}-vloss{:.3f}-tloss{:.3f}-vacc{:.3f}-24448.pth'.format(epoch, avg_vloss, mean_loss, avg_vacc))
+        avg_prec = running_tp / running_tp
+        avg_recall = running_tp / running_l
+        f1 = 2*avg_prec*avg_recall/(avg_prec+avg_recall)
+        print('LOSS train {} valid {}val_prec{}'.format(mean_loss, avg_vloss,avg_prec))
+        torch.save(net.state_dict(), './repository/net{}-vloss{:.3f}-tloss{:.3f}-vacc{:.3f}-vprec{:.3f}-vf1{:3f}24448.pth'.format(epoch, avg_vloss, mean_loss, avg_vacc, avg_prec, avg_prec))
 
 
 
