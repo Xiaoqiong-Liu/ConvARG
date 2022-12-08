@@ -15,3 +15,14 @@ def unison_shuffled_copies(a, b):
     assert len(a) == len(b)
     p = np.random.permutation(len(a))
     return a[p], b[p]
+
+"""caluate precision"""
+def prec_recall(pred, label):
+    # Calculate the number of true positive predictions
+  tp = (pred * label).sum()
+  # Calculate the number of positive predictions
+  pos_pred = pred.sum()
+  # Calculate the number of actual positive examples
+  pos_label = label.sum()
+  # Calculate and return precision
+  return tp , pos_pred, pos_label
