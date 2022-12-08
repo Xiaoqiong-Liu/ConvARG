@@ -55,6 +55,8 @@ val_dataloader = DataLoader(val_ds, batch_size=batch_size, shuffle=True)
 # validation
 running_vloss = 0.0
 running_vacc = 0.0
+running_tp =0.0
+running_l = 0.0
 for i, vdata in enumerate(val_dataloader):
     # 1. make prediction on validation data
     vinputs, vlabels = vdata
@@ -65,6 +67,13 @@ for i, vdata in enumerate(val_dataloader):
     pred[pred>=0.5] = 1
     pred[pred<0.5] = 0
     val_acc = torch.sum(pred == vlabels)
+    tp, pos_pred,pos_label = prec_recall(pred,vlabels)
     running_vacc += val_acc
+    running_tp += tp
+    running_l += pos_label
+avg_vloss = running_vloss / (i + 1)
 avg_vacc = running_vacc / ((i+1)*batch_size)
-print('Validation accuracy {}'.format(avg_vacc))
+avg_prec = running_tp / running_tp
+avg_recall = running_tp / running_l
+f1 = 2*avg_prec*avg_recall/(avg_prec+avg_recall)
+print('validation precsion:{:.3f}, val_prec:{:.3f}, val_recall:{:.3f},f1:{:.3f}'.format( avg_vacc,avg_prec,avg_recall,f1))
